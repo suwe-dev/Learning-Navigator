@@ -23,6 +23,6 @@ public class ExamEntity {
     @JoinColumn(name = "subject_id")
     private SubjectEntity subject;
 
-    @ManyToMany(mappedBy = "registeredExams")
+    @ManyToMany(mappedBy = "registeredExams", fetch = FetchType.EAGER)
     private Set<StudentEntity> enrolledStudents = new HashSet<>();
 }

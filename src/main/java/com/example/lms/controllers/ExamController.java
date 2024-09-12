@@ -1,22 +1,39 @@
 package com.example.lms.controllers;
 
 import com.example.lms.entities.ExamEntity;
+import com.example.lms.entities.SubjectEntity;
+import com.example.lms.exception.ResourceNotFoundException;
+import com.example.lms.repository.ExamRepository;
+import com.example.lms.repository.SubjectRepository;
 import com.example.lms.service.ExamService;
+import com.example.lms.service.ExamServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
+@RequestMapping("/exam")
 public class ExamController {
 
-    private ExamService examService;
+    @Autowired
+    private ExamServiceImpl examService;
 
-    @PostMapping("/exams/{examId}/{studentId}")
-    public ExamEntity enrollForExam(@PathVariable Long examId, @PathVariable Long studentId) {
-        return new ExamEntity();
+    @GetMapping
+    public List<ExamEntity> findAllUsers() {
+        return examService.findAll();
     }
 
-    @PatchMapping("/exams/{examId}/{studentId}")
-    public ExamEntity updateExam(@PathVariable Long examId, @PathVariable Long studentId) {
-        return new ExamEntity();
+    @PostMapping("/subject/{subject_id}")
+    public ExamEntity saveUser(@PathVariable Long subject_id) {
+        return examService.saveUser(subject_id);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<ExamEntity> findById(@PathVariable Long id) {
+        return examService.findById(id);
     }
 
 }

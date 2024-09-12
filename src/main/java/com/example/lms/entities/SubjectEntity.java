@@ -21,9 +21,6 @@ public class SubjectEntity {
 
     private String name;
 
-    @ManyToMany(mappedBy = "enrolledSubjects")
-    private Set<StudentEntity> registeredStudents = new HashSet<>();
-
-    @OneToMany(mappedBy = "subject")
-    private Set<ExamEntity> exams = new HashSet<>();
+    @ManyToMany(mappedBy = "enrolledSubjects", fetch = FetchType.EAGER)
+    private Set<StudentEntity> enrolledStudents = new HashSet<>();
 }

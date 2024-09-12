@@ -22,18 +22,18 @@ To clone the repository, follow these steps:
 
 Using HTTP
    ```bash 
-   git clone https://github.com/suwe-dev/Contestants.git
+   git clone https://github.com/suwe-dev/Learning-Navigator.git
    ```
 Using SSH
    ```bash
-   git clone git@github.com:suwe-dev/Contestants.git
+   git clone git@github.com:suwe-dev/Learning-Navigator.git
    ```
 ---
 ## Implementation
 
 Once download completed, make sure to navigate to the project directory
 ```bash
-   cd ./Contestants
+   cd ./Learning-Navigator
 ```
 
 ---
@@ -96,6 +96,6 @@ To build the project using Maven, follow these steps:
   
 ---
 ## API Documentation
-Find the **Postman** API collection [here](https://www.postman.com/supply-astronaut-79165515/workspace/crio/collection/27292799-3f13afa9-3e9a-42b6-b27e-6da2f7c207de?action=share&creator=27292799)
+Find the **Postman** API collection [here](https://www.postman.com/supply-astronaut-79165515/workspace/crio/collection/27292799-273e92ab-8ac8-4ab3-b655-9780cfe4c171?action=share&creator=27292799)
 
 ---
